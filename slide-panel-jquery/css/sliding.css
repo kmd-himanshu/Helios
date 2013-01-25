@@ -1,0 +1,75 @@
+body {
+	background-color: #EDEDED;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	margin: 0px;
+	padding: 0px;
+}
+
+div#wrap {
+  	position: relative;
+	width: 800px;
+	overflow: hidden;
+	margin: 100px auto 0px auto;
+}
+
+a#controlbtn{
+	color: #333;
+	text-decoration: none;
+	display: inline-block;
+	padding-left: 20px;
+}
+
+a#controlbtn.open {
+	background: transparent url(../images/toggle_minus.png) no-repeat left center;
+}
+
+a#controlbtn.close {
+	background: transparent url(../images/toggle_plus.png) no-repeat left center;
+}
+
+
+
+div#linkblock {
+	float: left;
+	width: 140px;
+	margin-left: -150px;
+	border-right: solid 1px #DDDDDD;
+}
+
+div#maincontent {
+	position: relative;
+	margin-left: 150px;
+}
+
+#yourlist {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+#yourlist li {
+	padding: 3px 5px 3px 0px;
+	position: relative;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 5px;
+	margin-left: 0;
+
+}
+
+#yourlist li a {
+	color: #D4432F;
+	padding: none;
+	margin: none;
+}
+
+h4 {
+	margin: 0px;
+	font-size: 16px;
+	line-height: 26px;
+	color: #333333;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	clear: none;
+}
+

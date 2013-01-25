@@ -1,0 +1,76 @@
+
+div#wrap {
+  	position: relative;	
+	overflow: hidden;
+	margin:0px auto 0px auto;
+	border: 10px solid red;
+	height: 200px
+}
+
+a#controlbtn{
+	color: #333;
+	text-decoration: none;
+	display: inline-block;
+	padding-left: 0px;
+}
+
+div#controlbtn.open {
+	width:10px;float:left;background-color:gray;border:1px solid yellow
+}
+
+div#controlbtn.close {
+	width:10px;float:left;background-color:green;
+}
+
+
+
+div#linkblock {
+	float: left;
+	width: 294px;
+	margin-left:-294px;
+	padding:0px;
+	margin-top:0px;
+	margin-bottom:opx 
+	background-color:#ffffff;
+    height:auto;
+	
+}
+
+div#maincontent {
+	position: relative;
+	margin-left: 294px;	
+	padding:0px;
+	margin-top:0px	
+}
+
+#yourlist {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+#yourlist li {
+	padding: 3px 5px 3px 0px;
+	position: relative;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 5px;
+	margin-left: 0;
+
+}
+
+#yourlist li a {
+	color: #D4432F;
+	padding: none;
+	margin: none;
+}
+
+h4 {
+	margin: 0px;
+	font-size: 16px;
+	line-height: 26px;
+	color: #333333;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	clear: none;
+}
+

@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JsTree-A11y Demo</title>
+    
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="lib/stdlib.js"></script>
+    <script type="text/javascript" src="lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="lib/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="jquery.jstree.js"></script>
+    <script type="text/javascript" src="lib/jquery-ui-1.8.23.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.23.custom.css" />
+    
+    <style type="text/css"></style>
+    
+    <script type="text/javascript">
+    
+    function getRectifiedString(array){
+    	array = array.unique();
+        array = array.clean(undefined);
+        var rectifiedString = array.join("|");
+    	return rectifiedString;
+    }
+    
+    /*function getField(field){
+    	var _field = ((field == undefined)? "" : field);
+    	return _field.replace(/^[ --> ]+/,"");
+    }*/
+    
+    function isBlank(str) {
+        return (!str || /^\s*$/.test(str));
+    }
+    
+    function writeToDialog(levelArray){
+    	var levelString = "";
+    	for(var i=0;i<levelArray.length;i++){
+    		var first = levelArray[i].first;
+    		var second = levelArray[i].second;
+    		var third = levelArray[i].third;
+    		var fourth = levelArray[i].fourth;
+  
+    		
+    		var firstStr = getDisplayString(first,levelString,1); 
+    		var secondStr = getDisplayString(second,levelString,2);
+    		var thirdStr = getDisplayString(third,levelString,3); 
+    		var fourthStr = getDisplayString(fourth,levelString,4);
+    		
+    		var totalStr = firstStr.concat(secondStr).concat(thirdStr).concat(fourthStr);
+    		
+    		levelString = levelString.concat(totalStr+"<BR>");
+    	}
+    	$('#selectedIds').html(levelString);
+        $('#dialogHelios').dialog({ modal: true },{ minWidth: 500 },{title : "User Selections"});
+    	
+    }
+    
+    /*
+    <li> <a>&nbsp;Invoices</a><br>
+    <ul>
+        <li> <a>&nbsp;January</a><br>
+        <ul>
+        <li> <a>&nbsp;Invoice A</a>
+        <br><li> <a>&nbsp;Invoice B</a><br>
+            
+    </ul>
+    <br>
+    <li><a>&nbsp;February</a><br>
+        <ul>
+            <li> <a>&nbsp;Invoice D</a><br> */
+    
+    function getDisplayString(str,levelString){
+    	if(isBlank(str)){
+    		 return "";
+    	}
+    	var retStr = "";
+    	if(levelString.contains(str)){
+    		retStr = "";
+    	}else{
+    		retStr = "<li> <a>"+str+"</a><BR><ul>";
+    	}
+    	
+    	if()
+    	
+		console.log("str = "+str + ": retStr ="+retStr);
+    	return retStr;    	
+    }
+    
+    $(function() {
+        $('#sampleTree1').jstree();
+        $('#sampleTree2').jstree({plugins : ["themes", "html_data", "ui", "hotkeys"]});
+        
+        $(".jstree-closed > a")
+            .attr("aria-expanded", "false");
+        $(".jstree-open > a")
+            .attr("aria-expanded", "true");
+        
+        
+        $('#btn-submit').click(function(){ 
+        	
+        	$('#selectedIds').val("");
+        	var selectedFirstLevelIds = "First Level Ids: ";
+        	var selectedSecondLevelIds = "Second Level Ids: ";
+        	var selectedThirdLevelIds = "Third Level Ids: ";
+        	var selectedFourthLevelIds = "Fourth Level Ids: ";
+        	
+        	var firstLevelIds = new Array();
+        	var secondLevelIds = new Array();
+        	var thirdLevelIds = new Array();
+        	var fourthLevelIds = new Array();
+        	
+        	var index=0;
+        	var x = $('.jstree-clicked');
+        	
+        	var levelArray = new Array();
+        	
+        	
+            $.each(x,function(i,v){
+            	
+            	
+            	var levelStatus = new Object();
+            	var allIds = new Array();
+            	var count = 0;
+            	var allParents = $(v).parents('li');
+            	
+            	$.each(allParents,function(j,item){
+            		allIds[count]= $(item).children('a').text();
+            		count++;
+            	}) 
+            	
+            	if(allIds.length == 1){
+            		firstLevelIds[index]= allIds[0];
+            	}else if(allIds.length == 2){
+            		secondLevelIds[index]= allIds[0];
+                	firstLevelIds[index]= allIds[1];
+            	}else if(allIds.length == 3){
+            		thirdLevelIds[index] = allIds[0];
+                	secondLevelIds[index]= allIds[1];
+                	firstLevelIds[index]= allIds[2];
+            	}else if(allIds.length == 4){
+            		fourthLevelIds[index] = allIds[0];
+            		thirdLevelIds[index] = allIds[1];
+                	secondLevelIds[index]= allIds[2];
+                	firstLevelIds[index]= allIds[3];
+            	}
+            	
+            	levelStatus.first = allIds[3];
+            	levelStatus.second = allIds[2];
+            	levelStatus.third = allIds[1];
+            	levelStatus.fourth = allIds[0];
+            	
+            	levelArray[index] = levelStatus;
+		        index++;
+            })
+            
+            
+            fourthLevelIds = getRectifiedString(fourthLevelIds);
+            thirdLevelIds = getRectifiedString(thirdLevelIds);
+            secondLevelIds = getRectifiedString(secondLevelIds);
+            firstLevelIds = getRectifiedString(firstLevelIds);
+            
+            selectedFirstLevelIds = selectedFirstLevelIds.concat(firstLevelIds);
+            selectedSecondLevelIds = selectedSecondLevelIds.concat(secondLevelIds);
+        	selectedThirdLevelIds = selectedThirdLevelIds.concat(thirdLevelIds);
+        	selectedFourthLevelIds = selectedFourthLevelIds.concat(fourthLevelIds);
+            
+            writeToDialog(levelArray);
+
+        });          
+		
+    	function print(allIds){
+		    console.log("..."+allIds);
+    	}
+      	
+        
+    });
+    </script>
+    
+    </head>
+    <body>
+    
+     
+    
+        <h1>JsTree Demo with Acessibility Modifications</h1>
+        <a href="#">Placeholder Link 1</a>
+    <div id="sampleTree2">
+        <ul>
+            <li id="invoiceId" class="first"> <a href="#">Invoices</a>
+                <ul>
+                    <li id="monthId1" class="second"> <a href="#">January</a>
+                            <ul>
+                            <li id="invoiceA" class="third"> <a href="#">Invoice A</a> </li>
+                            <li id="invoiceB" class="third"> <a href="#">Invoice B</a> </li>
+                            <li id="invoiceC" class="third"> <a href="#">Invoice C</a> </li>
+                        </ul>
+                        </li>
+                    <li id="monthId2" class="second"> <a href="#">February</a>
+                            <ul>
+                            <li  id="invoiceD" class="third"> <a href="#">Invoice D</a> </li>
+                            <li  id="invoiceE" class="third"> <a href="#">Invoice E</a> </li>
+                            <li  id="invoiceF" class="third"> <a href="#">Invoice F</a> </li>
+                        </ul>
+                        </li>
+                    <li id="monthId3" class="second"> <a href="#">March</a>
+                            <ul>
+                            <li  id="invoiceG" class="third"> <a href="#">Invoice G</a> </li>
+                            <li  id="invoiceH" class="third"> <a href="#">Invoice H</a> </li>
+                            <li  id="invoiceI" class="third"> <a href="#">Invoice I</a> </li>
+                        </ul>
+                        </li>
+                </ul>
+                </li>
+            <li> <a href="#">Job Applications</a>
+                <ul>
+                    <li> <a href="#">Unhandled</a>
+                            <ul>
+                            <li> <a href="#">Application A</a> </li>
+                            <li> <a href="#">Application B</a> </li>
+                            <li> <a href="#">Application C</a> </li>
+                            <li> <a href="#">Application D</a> </li>
+                            <li> <a href="#">Application E</a> </li>
+                            <li> <a href="#">Application F</a> </li>
+                            <li> <a href="#">Application G</a> </li>
+                            <li> <a href="#">Application H</a> </li>
+                        </ul>
+                        </li>
+                    <li> <a href="#">Accepted</a>
+                            <ul>
+                            <li> <a href="#">Peter Merchant</a> </li>
+                            <li> <a href="#">Susan Jennings</a> </li>
+                            <li> <a href="#">John Smith</a> </li>
+                        </ul>
+                        </li>
+                    <li> <a href="#">Declined</a>
+                            <ul>
+                            <li> <a href="#">John Doe</a> </li>
+                            <li> <a href="#">Jack Smith</a> </li>
+                            <li> <a href="#">Hannah Boyd</a> </li>
+                            <li> <a href="#">Reconsider?</a>
+                                    <ul>
+                                    <li> <a href="#">Sandra johnson</a> </li>
+                                    <li> <a href="#">Dan Smith</a> </li>
+                                    <li> <a href="#">Jason Bourne</a> </li>
+                                    <li> <a href="#">Jason Maple</a> </li>
+                                </ul>
+                                </li>
+                        </ul>
+                        </li>
+                </ul>
+                </li>
+            <li> <a href="#">Manuals</a>
+                    <ul>
+                    <li> <a href="#">Fax</a> </li>
+                    <li> <a href="#">Copier</a> </li>
+                    <li> <a href="#">Scanner</a> </li>
+                    <li> <a href="#">Laptop</a> </li>
+                </ul>
+                </li>
+            <li> <a href="#">Welcome Letter</a> </li>
+            <li> <a href="#">Getting Started</a> </li>
+            <li> <a href="#">Trouble Shooting</a> </li>
+        </ul>
+    </div>
+    </div>
+    <a href="#">Placeholder Link 2</a>
+<!-- End demo -->
+
+<div class="demo-description">
+	<input type="button" id="btn-submit" value="Update"/>
+ </div>
+<!-- End demo-description -->
+
+<div id="dialogHelios" title="Dialog Title" style="display:none"><p id="selectedIds"></p></div>
+
+</body>
+</html>

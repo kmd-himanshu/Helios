@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    var chart;
+      google.load("visualization", "1", {packages:["columnchart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        /* var data = google.visualization.arrayToDataTable([
+          ['Year', 'Previous Year', 'Current Year'],
+          ['Glocery-SFS',  1000,      400, ],
+          ['Produce-SFS',  1170,      460, ],
+          ['MAINT2-SFS',  660,       1120]
+         
+        ]); */
+        
+        var data = google.visualization.arrayToDataTable([
+                                                          ['Year', 'Previous Year', 'Current Year'],
+                                                          ['',  1000,      400, ],
+                                                          ['',  1170,      460, ],
+                                                          ['',  660,       1120]
+                                                         
+                                                        ]); 
+        
+        var options = {width: 500, 
+        		height: 300,
+        		legend : 'none',
+        		is3D: true, 
+        	colors: ['#FF8000', '#50A6DA'],
+        	vAxis: {0:{title: "Cups"},1:{title: "Plates"}},
+        	series: {0: {type: "bars",targetAxisIndex: 0},
+    	  		1:{type:"bars",targetAxisIndex: 1},
+      			2:{type: "line",pointSize:5}}
+      			
+        	};
+
+        chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+        
+     	// Add our over/out handlers.
+        google.visualization.events.addListener(chart, 'onmouseover', barMouseOver);
+        //google.visualization.events.addListener(chart, 'onmouseout', barMouseOut);
+      }
+      
+      function barMouseOver(e) {
+    	  chart.setSelection([e]);
+    	  }
+
+   	  function barMouseOut(e) {
+   		chart.setSelection([{'row': null, 'column': null}]);
+    	}
+    	  
+    </script>
+  </head>
+
+  <body>
+    <div id="chart_div"></div>
+  </body>
+</html>

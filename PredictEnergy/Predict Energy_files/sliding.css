@@ -1,0 +1,30 @@
+DIV#wrap {
+	BORDER-BOTTOM: red 10px solid; POSITION: relative; BORDER-LEFT: red 10px solid; MARGIN: 0px auto; HEIGHT: 200px; OVERFLOW: hidden; BORDER-TOP: red 10px solid; BORDER-RIGHT: red 10px solid
+}
+A#controlbtn {
+	PADDING-LEFT: 0px; DISPLAY: inline-block; COLOR: #333; TEXT-DECORATION: none
+}
+DIV.open#controlbtn {
+	BORDER-BOTTOM: yellow 1px solid; BORDER-LEFT: yellow 1px solid; BACKGROUND-COLOR: gray; WIDTH: 10px; FLOAT: left; BORDER-TOP: yellow 1px solid; BORDER-RIGHT: yellow 1px solid
+}
+DIV.close#controlbtn {
+	BACKGROUND-COLOR: green; WIDTH: 10px; FLOAT: left
+}
+DIV#linkblock {
+	BORDER-BOTTOM: green 1px solid; BORDER-LEFT: green 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 300px; PADDING-RIGHT: 0px; FLOAT: left; MARGIN-LEFT: -310px; BORDER-TOP: green 1px solid; MARGIN-RIGHT: 0px; BORDER-RIGHT: green 1px solid; PADDING-TOP: 0px
+}
+DIV#maincontent {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-LEFT: 310px; PADDING-TOP: 0px
+}
+#yourlist {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+#yourlist LI {
+	POSITION: relative; PADDING-BOTTOM: 3px; MARGIN: 0px 0px 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 5px; PADDING-TOP: 3px
+}
+#yourlist LI A {
+	COLOR: #d4432f
+}
+H4 {
+	LINE-HEIGHT: 26px; MARGIN: 0px; FONT-FAMILY: Helvetica, Arial, sans-serif; COLOR: #333333; CLEAR: none; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}

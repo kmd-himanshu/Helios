@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0052)http://localhost:8080/Helios/index.jsp -->
+<HTML><HEAD><TITLE>:: Predict Energy ::</TITLE><LINK rel=stylesheet 
+type=text/css href="Predict%20Energy_files/style.css">
+<META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+<LINK rel=stylesheet type=text/css href="Predict%20Energy_files/sliding.css">
+<LINK rel=stylesheet type=text/css 
+href="Predict%20Energy_files/jquery-ui-1.8.23.custom.css">
+
+<SCRIPT type=text/javascript 
+src="Predict%20Energy_files/jquery-1.8.0.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Predict%20Energy_files/jquery-ui-1.8.23.custom.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Predict%20Energy_files/slidingCAV3NMBJ.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="Predict%20Energy_files/easing.js"></SCRIPT>
+<SCRIPT type=text/javascript src="Predict%20Energy_files/jquery.jstree.js"></SCRIPT>
+
+
+<META name=GENERATOR content="MSHTML 8.00.6001.19190"></HEAD>
+<BODY class=AlignBody>
+
+<TABLE id=Table1 class=MainTable border=0 cellSpacing=0 cellPadding=0 
+width="100%">
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=middle>
+      <TABLE id=Table2 class=BodyTable border=0 cellSpacing=0 cellPadding=0 
+      align=center height="100%"><!-- ***************************** HEADER STARTS HERE ******************************************** -->
+        <TBODY>
+        <TR>
+          <TD class=HeaderSection>
+            <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" 
+            align=center>
+              <TBODY>
+              <TR>
+                <TD align=left>&nbsp;</TD>
+                <TD align=right><IMG 
+              src="Predict%20Energy_files/Logo.jpg"></TD></TR></TBODY></TABLE></TD></TR><!-- ***************************** HEADER ENDS HERE ******************************************** --><!-- ***************************** MENU STARTS HERE ******************************************** -->
+        <TR>
+          <TD class=BgMainMenu>
+            <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" 
+              height=40><TBODY>
+              <TR>
+                <TD width=425 align=left>
+                  <DIV 
+                  style="POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 40px; PADDING-TOP: 0px" 
+                  id=MenuPos></DIV></TD>
+                <TD class=MenuEnd align=middle></TD>
+                <TD align=right>&nbsp;</TD></TR></TBODY></TABLE></TD></TR><!-- ***************************** MENU ENDS HERE ******************************************** -->
+        <TR>
+          <TD class=BgTitleBar>
+            <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=PageHeading align=left>Business Unit Dashboard</TD>
+                <TD align=right>
+                  <TABLE border=0 cellSpacing=0 cellPadding=0>
+                    <TBODY>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD><A 
+                        href="http://localhost:8080/Helios/index.jsp?MI=PLANT_UNIT#"><IMG 
+                        border=0 alt=Enterprise 
+                        src="Predict%20Energy_files/IconEnterprise.png"></A></TD>
+                      <TD width=10>&nbsp;</TD>
+                      <TD><A 
+                        href="http://localhost:8080/Helios/index.jsp?MI=PLANT_UNIT#"><IMG 
+                        border=0 alt="Business Unit" 
+                        src="Predict%20Energy_files/IconBusinessUnit.png"></A></TD>
+                      <TD width=10>&nbsp;</TD>
+                      <TD><A 
+                        href="http://localhost:8080/Helios/index.jsp?MI=PLANT_UNIT#"><IMG 
+                        border=0 alt=Plant 
+                        src="Predict%20Energy_files/IconPlant.png"></A></TD>
+                      <TD width=10>&nbsp;</TD>
+                      <TD><A 
+                        href="http://localhost:8080/Helios/index.jsp?MI=PLANT_UNIT#"><IMG 
+                        border=0 alt=Operations 
+                        src="Predict%20Energy_files/IconOperations.png"></A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=PageBody vAlign=top align=middle>
+            <TABLE border=1 cellSpacing=0 cellPadding=0 width="100%">
+              <TBODY>
+              <TR>
+                <TD width="100%" align=left>
+                  <DIV style="FLOAT: left"><IMG id=controlbtn 
+                  src="Predict%20Energy_files/toggle_minus.png"></DIV>
+                  <DIV id=show_hide>Hide Controls</DIV></TD></TR>
+              <TR>
+                <TD align=left>
+                  <DIV id=maincontent>
+                  <DIV id=linkblock>
+                  <STYLE type=text/css></STYLE>
+                  <LINK rel=stylesheet href="Predict%20Energy_files/demo.css"><!-- JSTree plugin files -->
+                  <SCRIPT type=text/javascript>
+	
+	
+	
+	jQuery().ready(function(){
+
+		// simple accordion
+		jQuery('#list1a').accordion();
+		
+		
+		// bind to change event of select to control first and seconds accordion
+		// similar to tab's plugin triggerTab(), without an extra method
+
+		var accordions = jQuery('#list1a');
+
+		
+		jQuery('#switch select').change(function() {
+			accordions.accordion("activate", this.selectedIndex-1 );
+		});
+		jQuery('#close').click(function() {
+			accordions.accordion("activate", -1);
+		});
+		jQuery('#switch2').change(function() {
+			accordions.accordion("activate", this.value);
+		});
+
+		jQuery('#enable').click(function() {
+
+			accordions.accordion("enable");
+
+		});
+
+		jQuery('#disable').click(function() {
+
+			accordions.accordion("disable");
+
+		});
+
+		jQuery('#remove').click(function() {
+
+			accordions.accordion("destroy");
+			wizardButtons.unbind("click");
+
+		});
+
+	});
+	
+	</SCRIPT>
+
+                  <FORM onsubmit=callViewer() name=menu action=./Viewer.jsp 
+                  target=right>
+                  <DIV style="WIDTH: 100%" id=list1a class=basic><A 
+                  style="PADDING-LEFT: 30px">Business Unit Navigation</A> 
+                  <DIV 
+                  style="BORDER-BOTTOM: white 1px solid; BORDER-LEFT: white 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: white 1px solid; BORDER-RIGHT: white 1px solid; PADDING-TOP: 0px">
+                  <DIV 
+                  style="BORDER-BOTTOM: yellow 0px solid; BORDER-LEFT: yellow 0px solid; HEIGHT: 450px; OVERFLOW: scroll; BORDER-TOP: yellow 0px solid; BORDER-RIGHT: yellow 0px solid">
+
+
+									<ul>
+										<li> <a href="#">Invoices</a>
+											<ul>
+												<li> <a href="#">January</a>
+														<ul>
+														<li> <a href="#">Invoice A</a> </li>
+														<li> <a href="#">Invoice B</a> </li>
+														<li> <a href="#">Invoice C</a> </li>
+													</ul>
+													</li>
+											</ul>
+											</li>
+										</ul>
+
+				  <TABLE cellSpacing=0 cellPadding=0>
+                    <TBODY>
+                    <TR>
+									
+				 
+					</TR>
+                    </TBODY>
+					
+					</TABLE>
+					
+					</DIV>
+					
+					
+					
+					</DIV><A 
+                  style="PADDING-LEFT: 30px">Graphs Control</A> 
+                  <DIV 
+                  style="BORDER-BOTTOM: white 1px solid; BORDER-LEFT: white 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: white 1px solid; BORDER-RIGHT: white 1px solid; PADDING-TOP: 0px"><INPUT 
+                  id=displaLabelsCheckbox CHECKED type=checkbox 
+                  name=displaLabelsCheckbox> Display Axes Labels<BR><INPUT 
+                  id=displayTitleCheckbox CHECKED type=checkbox 
+                  name=displayTitleCheckbox> Display Title<BR><INPUT 
+                  id=displayLegendsCheckbox CHECKED type=checkbox 
+                  name=displayLegendsCheckbox> Display Legends <INPUT 
+                  id=displayLabels type=hidden name=displayLabels> <INPUT 
+                  id=displayTitle type=hidden name=displayTitle> <INPUT 
+                  id=displayLegends type=hidden name=displayLegends> <INPUT 
+                  id=buildingAllocationId type=hidden name=buildingAllocationId> 
+                  <INPUT id=pageName value=defaultViewer.jsp type=hidden 
+                  name=pageName> </DIV><A 
+                  style="PADDING-LEFT: 30px">Distribution (Loc)</A> 
+                  <DIV 
+                  style="BORDER-BOTTOM: white 1px solid; BORDER-LEFT: white 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: white 1px solid; BORDER-RIGHT: white 1px solid; PADDING-TOP: 0px">
+                  <TABLE border=0 cellSpacing=0 cellPadding=2 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD width="35%"><LABEL>Start Date:</LABEL> </TD>
+                      <TD width="65%"><SELECT> <OPTION 
+                          selected>08/14/2011</OPTION> 
+                          <OPTION>08/14/2011</OPTION> 
+                        <OPTION>08/14/2011</OPTION></SELECT> </TD></TR>
+                    <TR>
+                      <TD><LABEL>End Date:</LABEL> </TD>
+                      <TD><SELECT> <OPTION selected>08/14/2011</OPTION> 
+                          <OPTION>08/14/2011</OPTION> 
+                        <OPTION>08/14/2011</OPTION></SELECT> </TD></TR>
+                    <TR>
+                      <TD><LABEL>Start Period:</LABEL> </TD>
+                      <TD><SELECT name=startPeriod> <OPTION selected 
+                          value=1101>Period 09 2011</OPTION></SELECT> </TD></TR>
+                    <TR>
+                      <TD><LABEL>End Period:</LABEL> </TD>
+                      <TD><SELECT name=period> <OPTION selected 
+                          value=1101>Period 09 2011</OPTION></SELECT> </TD></TR>
+                    <TR>
+                      <TD><INPUT id=updateId value=Update type=button> 
+                    </TD></TR></TBODY></TABLE></DIV></DIV>
+                  <SCRIPT type=text/javascript>
+
+	    
+	    $(document).ready(function() {
+
+
+         $("#updateId").click(function(){
+        	 
+        	 if(document.getElementById("displayTitleCheckbox").checked)
+     		{
+     		    document.getElementById("displayTitle").value=true;
+     		}else{
+     			document.getElementById("displayTitle").value=false;
+     		}
+     	    if(document.getElementById("displaLabelsCheckbox").checked)
+     		{
+     		document.getElementById("displayLabels").value=true;
+     		}else{
+     			document.getElementById("displayLabels").value=false;
+     		}
+     	    
+     	    if(document.getElementById("displayLegendsCheckbox").checked)
+     		{
+     		document.getElementById("displayLegends").value=true;
+     		}else{
+     			document.getElementById("displayLegends").value=false;
+     		}  
+     	    var foo=valuate();
+     	    
+     	    if(foo)
+     	    	document.getElementById("pageName").value="Viewer.jsp"  	
+     	    else
+     	    	document.getElementById("pageName").value="defaultViewer.jsp";
+     	    
+        	 
+        	$("#right").load("/Helios/pages/dashboard.jsp?"+
+        			$.param(
+        					{
+        						pageName:document.getElementById("pageName").value,
+        						displayTitle:document.getElementById("displayTitle").value,
+        						displayLabels:document.getElementById("displayLabels").value,
+        						displayLegends:document.getElementById("displayLegends").value
+        						
+        					}
+        	
+        	) );  
+
+         });
+      });    
+
+	    
+	
+
+
+function valuate(){
+	var txt='';
+	var buildingCheckboxes=document.getElementsByName('buildingCheckbox')
+	var foo=false;
+	for (var i_tem = 0; i_tem < buildingCheckboxes.length; i_tem++)
+	if (buildingCheckboxes[i_tem].checked){
+		foo=true;
+	txt+=','+buildingCheckboxes[i_tem].value;
+	}
+	txt=txt.replace(/^,/,'');
+	document.getElementById('buildingAllocationId').value=txt;
+	return foo;
+	}
+	
+	
+	
+</SCRIPT>
+                  </FORM></DIV>
+                  <DIV id=right>
+                  <SCRIPT type=text/javascript>$("#right").load('./pages/dashboard.jsp?MI=PLANT_UNIT');</SCRIPT>
+                  </DIV></DIV></TD></TR></TBODY></TABLE></TD></TR><!-- ***************************** FOOTER STARTS HERE ******************************************** -->
+        <TR>
+          <TD class=footer>Copyright © 2012. All Rights Reserved. </TD></TR><!-- ***************************** FOOTER ENDS HERE ******************************************** --></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Predict%20Energy_files/RelativePositioned_var.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Predict%20Energy_files/menu132_compact.js"></SCRIPT>
+</BODY></HTML>

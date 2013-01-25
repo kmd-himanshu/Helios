@@ -1,0 +1,15 @@
+.look {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+  color: #333333;
+  background-color: #ffffff;
+  padding: 8px 35px 8px 14px;
+}
+
+.unit{
+	border: 1px solid green;
+	padding: 8px;
+	color: #51A451;
+}

@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Performance test with URL</title>
+<script type="text/javascript" src="../js/chartAjaxAPI.js"></script>
+<script type="text/javascript">
+	function generateChart() {
+		var startTime = new Date().getTime();
+		var dataURL = getDataURL();
+		var chart = new BirtChart();
+		for ( var cindex = 0; cindex < 10; cindex++) {			
+			chart.setDataURL(dataURL);
+			if (cindex == 9) {
+				chart.setStartTime(startTime);
+			}
+			chart.render("chartDiv" + cindex);
+		}
+	}
+	function getDataURL() {
+		var url = "perf/dataPerf10.xml";
+		var strloc = new String(location);
+		var startIndex = strloc.indexOf("dataURL=");
+		if (startIndex >= 0) {
+			url = strloc.substring(startIndex + 8);
+		}
+		return url;
+	}
+</script>
+</head>
+<body onload="generateChart()">
+<div id="chartDiv0"></div>
+<div id="chartDiv1"></div>
+<div id="chartDiv2"></div>
+<div id="chartDiv3"></div>
+<div id="chartDiv4"></div>
+<div id="chartDiv5"></div>
+<div id="chartDiv6"></div>
+<div id="chartDiv7"></div>
+<div id="chartDiv8"></div>
+<div id="chartDiv9"></div>
+</body>
+</html>

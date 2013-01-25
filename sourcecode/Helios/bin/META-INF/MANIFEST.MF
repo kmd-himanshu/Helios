@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Serviceapi
+Bundle-SymbolicName: com.helio.app.serviceapi
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.helio.app.serviceapi,
+ com.helio.app.serviceapi.kpi,
+ com.helio.app.serviceapi.rules,
+ com.helio.app.serviceapi.test
+Require-Bundle: com.helio.app.boomer.common.dal;bundle-version="1.0.0"

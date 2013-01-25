@@ -1,0 +1,18 @@
+#list2 {
+	height: 178px;
+	border: 1px solid #eee;
+	overflow: hidden;
+}
+#list2 .red {
+	color: red;
+	background-color: red;
+}
+#list2 .green {
+	color: green;
+	background-color: green;
+}
+#list2 .blue {
+	color: blue;
+	background-color: blue;
+}
+

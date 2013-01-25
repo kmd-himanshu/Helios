@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<faces-config>
+	<managed-bean>
+		<managed-bean-name>tableBean</managed-bean-name>
+		<managed-bean-class>org.bcje.model.TableBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>chartBean</managed-bean-name>
+		<managed-bean-class>org.bcje.model.ChartBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	
+</faces-config>

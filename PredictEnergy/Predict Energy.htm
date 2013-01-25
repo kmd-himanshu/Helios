@@ -1,0 +1,675 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0052)http://localhost:8080/Helios/index.jsp -->
+<HTML><HEAD><TITLE>:: Predict Energy ::</TITLE><LINK rel=stylesheet 
+type=text/css href="Predict%20Energy_files/style.css">
+<META content="text/html; charset=iso-8859-1" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css href="Predict%20Energy_files/sliding.css"><LINK 
+rel=stylesheet type=text/css 
+href="Predict%20Energy_files/jquery-ui-1.8.23.custom.css">
+<SCRIPT type=text/javascript 
+src="Predict%20Energy_files/jquery-1.8.0.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Predict%20Energy_files/jquery-ui-1.8.23.custom.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Predict%20Energy_files/slidingCAV3NMBJ.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="Predict%20Energy_files/easing.js"></SCRIPT>
+
+<SCRIPT type=text/JavaScript>
+<!--
+	
+
+
+//-->
+</SCRIPT>
+
+<META name=GENERATOR content="MSHTML 8.00.6001.19190"></HEAD>
+<BODY class=AlignBody>
+<TABLE id=Table1 class=MainTable border=0 cellSpacing=0 cellPadding=0 
+width="100%">
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=middle>
+      <TABLE id=Table2 class=BodyTable border=0 cellSpacing=0 cellPadding=0 
+      align=center height="100%"><!-- ***************************** HEADER STARTS HERE ******************************************** -->
+        <TBODY>
+        <TR>
+          <TD class=HeaderSection>
+            <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" 
+            align=center>
+              <TBODY>
+              <TR>
+                <TD align=left>&nbsp;</TD>
+                <TD align=right><IMG 
+              src="Predict%20Energy_files/Logo.jpg"></TD></TR></TBODY></TABLE></TD></TR><!-- ***************************** HEADER ENDS HERE ******************************************** --><!-- ***************************** MENU STARTS HERE ******************************************** -->
+        <TR>
+          <TD class=BgMainMenu>
+            <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" 
+              height=40><TBODY>
+              <TR>
+                <TD width=425 align=left>
+                  <DIV 
+                  style="POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 40px; PADDING-TOP: 0px" 
+                  id=MenuPos></DIV></TD>
+                <TD class=MenuEnd align=middle></TD>
+                <TD align=right>&nbsp;</TD></TR></TBODY></TABLE></TD></TR><!-- ***************************** MENU ENDS HERE ******************************************** -->
+        <TR>
+          <TD class=BgTitleBar>
+            <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+              <TBODY>
+              <TR>
+                <TD class=PageHeading align=left>Business Unit Dashboard</TD>
+                <TD align=right>
+                  <TABLE border=0 cellSpacing=0 cellPadding=0>
+                    <TBODY>
+                    <TR>
+                      <TD>&nbsp;</TD>
+                      <TD><A 
+                        href="http://localhost:8080/Helios/index.jsp?MI=PLANT_UNIT#"><IMG 
+                        border=0 alt=Enterprise 
+                        src="Predict%20Energy_files/IconEnterprise.png"></A></TD>
+                      <TD width=10>&nbsp;</TD>
+                      <TD><A 
+                        href="http://localhost:8080/Helios/index.jsp?MI=PLANT_UNIT#"><IMG 
+                        border=0 alt="Business Unit" 
+                        src="Predict%20Energy_files/IconBusinessUnit.png"></A></TD>
+                      <TD width=10>&nbsp;</TD>
+                      <TD><A 
+                        href="http://localhost:8080/Helios/index.jsp?MI=PLANT_UNIT#"><IMG 
+                        border=0 alt=Plant 
+                        src="Predict%20Energy_files/IconPlant.png"></A></TD>
+                      <TD width=10>&nbsp;</TD>
+                      <TD><A 
+                        href="http://localhost:8080/Helios/index.jsp?MI=PLANT_UNIT#"><IMG 
+                        border=0 alt=Operations 
+                        src="Predict%20Energy_files/IconOperations.png"></A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=PageBody vAlign=top align=middle>
+            <TABLE border=1 cellSpacing=0 cellPadding=0 width="100%">
+              <TBODY>
+              <TR>
+                <TD width="100%" align=left>
+                  <DIV style="FLOAT: left"><IMG id=controlbtn 
+                  src="Predict%20Energy_files/toggle_minus.png"></DIV>
+                  <DIV id=show_hide>Hide Controls</DIV></TD></TR>
+              <TR>
+                <TD align=left>
+                  <DIV id=maincontent>
+                  <DIV id=linkblock>
+                  <SCRIPT type=text/javascript>
+	
+	
+	
+	jQuery().ready(function(){
+
+		// simple accordion
+		jQuery('#list1a').accordion();
+		
+		
+		// bind to change event of select to control first and seconds accordion
+		// similar to tab's plugin triggerTab(), without an extra method
+
+		var accordions = jQuery('#list1a');
+
+		
+		jQuery('#switch select').change(function() {
+			accordions.accordion("activate", this.selectedIndex-1 );
+		});
+		jQuery('#close').click(function() {
+			accordions.accordion("activate", -1);
+		});
+		jQuery('#switch2').change(function() {
+			accordions.accordion("activate", this.value);
+		});
+
+		jQuery('#enable').click(function() {
+
+			accordions.accordion("enable");
+
+		});
+
+		jQuery('#disable').click(function() {
+
+			accordions.accordion("disable");
+
+		});
+
+		jQuery('#remove').click(function() {
+
+			accordions.accordion("destroy");
+			wizardButtons.unbind("click");
+
+		});
+
+	});
+	
+	</SCRIPT>
+
+                  <FORM onsubmit=callViewer() name=menu action=./Viewer.jsp 
+                  target=right>
+                  <DIV style="WIDTH: 100%" id=list1a class=basic><A 
+                  style="PADDING-LEFT: 30px">Business Unit Navigation</A> 
+                  <DIV 
+                  style="BORDER-BOTTOM: white 1px solid; BORDER-LEFT: white 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: white 1px solid; BORDER-RIGHT: white 1px solid; PADDING-TOP: 0px">
+                  <DIV 
+                  style="BORDER-BOTTOM: yellow 0px solid; BORDER-LEFT: yellow 0px solid; HEIGHT: 450px; OVERFLOW: scroll; BORDER-TOP: yellow 0px solid; BORDER-RIGHT: yellow 0px solid">
+                  <TABLE cellSpacing=0 cellPadding=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI id="level1Id" class="level1">Denver 
+                          <UL>
+                            <LI id="level2Id" class="level2">Denver, CO 
+                            <UL id="level3Id" class="level3"><INPUT id=buildingCheckbox value=1001 
+                              type=checkbox 
+                              name=buildingCheckbox>Admin<BR><INPUT 
+                              id=buildingCheckbox value=1002 type=checkbox 
+                              name=buildingCheckbox>Freeze<BR><INPUT 
+                              id=buildingCheckbox value=1003 type=checkbox 
+                              name=buildingCheckbox>Freezer - 
+                              Stapleton<BR><INPUT id=buildingCheckbox value=1004 
+                              type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1005 type=checkbox 
+                              name=buildingCheckbox>Maintenance<BR><INPUT 
+                              id=buildingCheckbox value=1006 type=checkbox 
+                              name=buildingCheckbox>Meat<BR><INPUT 
+                              id=buildingCheckbox value=1007 type=checkbox 
+                              name=buildingCheckbox>Perishable<BR><INPUT 
+                              id=buildingCheckbox value=1008 type=checkbox 
+                              name=buildingCheckbox>Produce<BR><INPUT 
+                              id=buildingCheckbox value=1009 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR><INPUT 
+                              id=buildingCheckbox value=1010 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=1011 type=checkbox 
+                              name=buildingCheckbox>Variety<BR><INPUT 
+                              id=buildingCheckbox value=1012 type=checkbox 
+                              name=buildingCheckbox>Cake 
+                          Commissary<BR></UL></LI></UL></LI></UL></TD></TR>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI>Dominicks 
+                          <UL>
+                            <LI>Location 1 
+                            <UL><INPUT id=buildingCheckbox value=1 
+                              type=checkbox name=buildingCheckbox>Main 
+                              Building<BR></UL></LI>
+                            <LI>Northlake, IL (555 Bldg) 
+                            <UL><INPUT id=buildingCheckbox value=1101 
+                              type=checkbox 
+                              name=buildingCheckbox>Produce<BR><INPUT 
+                              id=buildingCheckbox value=1102 type=checkbox 
+                              name=buildingCheckbox>Commissary<BR><INPUT 
+                              id=buildingCheckbox value=1103 type=checkbox 
+                              name=buildingCheckbox>Admin<BR><INPUT 
+                              id=buildingCheckbox value=1104 type=checkbox 
+                              name=buildingCheckbox>Maintenance<BR><INPUT 
+                              id=buildingCheckbox value=1105 type=checkbox 
+                              name=buildingCheckbox>Deli-Meat<BR><INPUT 
+                              id=buildingCheckbox value=1106 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=1107 type=checkbox 
+                              name=buildingCheckbox>Grocery<BR></UL></LI></UL></LI></UL></TD></TR>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI>Eastern 
+                          <UL>
+                            <LI>Collington, MD, 3rd party operated 
+                            <UL><INPUT id=buildingCheckbox value=1201 
+                              type=checkbox 
+                              name=buildingCheckbox>Perishable<BR><INPUT 
+                              id=buildingCheckbox value=1202 type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1203 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=1204 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR><INPUT 
+                              id=buildingCheckbox value=1205 type=checkbox 
+                              name=buildingCheckbox>Admin<BR></UL></LI>
+                            <LI>Landover, MD, 3rd party operated 
+                            <UL><INPUT id=buildingCheckbox value=1206 
+                              type=checkbox 
+                            name=buildingCheckbox>Variety<BR></UL></LI></UL></LI></UL></TD></TR>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI>NorCal 
+                          <UL>
+                            <LI>Tracy, CA 
+                            <UL><INPUT id=buildingCheckbox value=1301 
+                              type=checkbox 
+                              name=buildingCheckbox>Admin<BR><INPUT 
+                              id=buildingCheckbox value=1302 type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1303 type=checkbox 
+                              name=buildingCheckbox>Perishable<BR><INPUT 
+                              id=buildingCheckbox value=1304 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=1305 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR></UL></LI></UL></LI></UL></TD></TR>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI>Phoenix 
+                          <UL>
+                            <LI>Tempe, AZ 
+                            <UL><INPUT id=buildingCheckbox value=1401 
+                              type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1402 type=checkbox 
+                              name=buildingCheckbox>Produce-Meat<BR><INPUT 
+                              id=buildingCheckbox value=1403 type=checkbox 
+                              name=buildingCheckbox>Banana<BR><INPUT 
+                              id=buildingCheckbox value=1404 type=checkbox 
+                              name=buildingCheckbox>Flowers<BR><INPUT 
+                              id=buildingCheckbox value=1405 type=checkbox 
+                              name=buildingCheckbox>Candy<BR><INPUT 
+                              id=buildingCheckbox value=1406 type=checkbox 
+                              name=buildingCheckbox>Frozen<BR><INPUT 
+                              id=buildingCheckbox value=1407 type=checkbox 
+                              name=buildingCheckbox>Perishables<BR><INPUT 
+                              id=buildingCheckbox value=1408 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=1409 type=checkbox 
+                              name=buildingCheckbox>Admin<BR></UL></LI></UL></LI></UL></TD></TR>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI>Portland 
+                          <UL>
+                            <LI>Clackamas, OR 
+                            <UL><INPUT id=buildingCheckbox value=1501 
+                              type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1502 type=checkbox 
+                              name=buildingCheckbox>Produce-Meat<BR><INPUT 
+                              id=buildingCheckbox value=1503 type=checkbox 
+                              name=buildingCheckbox>Produce-Banana<BR><INPUT 
+                              id=buildingCheckbox value=1504 type=checkbox 
+                              name=buildingCheckbox>Admin<BR><INPUT 
+                              id=buildingCheckbox value=1505 type=checkbox 
+                              name=buildingCheckbox>New Frozen<BR><INPUT 
+                              id=buildingCheckbox value=1506 type=checkbox 
+                              name=buildingCheckbox>Perishables<BR><INPUT 
+                              id=buildingCheckbox value=1507 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=1508 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR><INPUT 
+                              id=buildingCheckbox value=1509 type=checkbox 
+                              name=buildingCheckbox>Milk<BR></UL></LI></UL></LI></UL></TD></TR>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI>Texas 
+                          <UL>
+                            <LI>Houston, TX (Telge) 
+                            <UL><INPUT id=buildingCheckbox value=1601 
+                              type=checkbox 
+                              name=buildingCheckbox>Frozen<BR><INPUT 
+                              id=buildingCheckbox value=1602 type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1603 type=checkbox 
+                              name=buildingCheckbox>Perishable<BR><INPUT 
+                              id=buildingCheckbox value=1604 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR><INPUT 
+                              id=buildingCheckbox value=1605 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=1606 type=checkbox 
+                              name=buildingCheckbox>Admin<BR></UL></LI>
+                            <LI>Dallas, TX (Alliance, Leased) 
+                            <UL><INPUT id=buildingCheckbox value=1607 
+                              type=checkbox 
+                              name=buildingCheckbox>Salvage<BR><INPUT 
+                              id=buildingCheckbox value=1608 type=checkbox 
+                              name=buildingCheckbox>Perishable<BR><INPUT 
+                              id=buildingCheckbox value=1609 type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1610 type=checkbox 
+                              name=buildingCheckbox>Variety<BR><INPUT 
+                              id=buildingCheckbox value=1611 type=checkbox 
+                              name=buildingCheckbox>Frozen<BR><INPUT 
+                              id=buildingCheckbox value=1612 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=1613 type=checkbox 
+                              name=buildingCheckbox>Admin<BR></UL></LI></UL></LI></UL></TD></TR>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI>Seattle 
+                          <UL>
+                            <LI>Auburn, WA 
+                            <UL><INPUT id=buildingCheckbox value=1701 
+                              type=checkbox 
+                              name=buildingCheckbox>Frozen<BR><INPUT 
+                              id=buildingCheckbox value=1702 type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1703 type=checkbox 
+                              name=buildingCheckbox>Meats<BR><INPUT 
+                              id=buildingCheckbox value=1704 type=checkbox 
+                              name=buildingCheckbox>Variety<BR><INPUT 
+                              id=buildingCheckbox value=1705 type=checkbox 
+                              name=buildingCheckbox>Produce<BR><INPUT 
+                              id=buildingCheckbox value=1706 type=checkbox 
+                              name=buildingCheckbox>Perishables<BR><INPUT 
+                              id=buildingCheckbox value=1707 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=1708 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR><INPUT 
+                              id=buildingCheckbox value=1709 type=checkbox 
+                              name=buildingCheckbox>Offices<BR><INPUT 
+                              id=buildingCheckbox value=1710 type=checkbox 
+                              name=buildingCheckbox>Admin<BR></UL></LI>
+                            <LI>Spokane, WA 
+                            <UL><INPUT id=buildingCheckbox value=1711 
+                              type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1712 type=checkbox 
+                              name=buildingCheckbox>Meat<BR><INPUT 
+                              id=buildingCheckbox value=1713 type=checkbox 
+                              name=buildingCheckbox>Produce<BR><INPUT 
+                              id=buildingCheckbox value=1714 type=checkbox 
+                              name=buildingCheckbox>Maintenance<BR><INPUT 
+                              id=buildingCheckbox value=1715 type=checkbox 
+                              name=buildingCheckbox>Admin<BR><INPUT 
+                              id=buildingCheckbox value=1716 type=checkbox 
+                              name=buildingCheckbox>Storage (Office)<BR><INPUT 
+                              id=buildingCheckbox value=1717 type=checkbox 
+                              name=buildingCheckbox>Frozen<BR><INPUT 
+                              id=buildingCheckbox value=1718 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=1719 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR></UL></LI>
+                            <LI>Anchorage, AK - Carr's 
+                            <UL><INPUT id=buildingCheckbox value=1720 
+                              type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1721 type=checkbox 
+                              name=buildingCheckbox>Produce (Cooler)<BR><INPUT 
+                              id=buildingCheckbox value=1722 type=checkbox 
+                              name=buildingCheckbox>Frozen<BR><INPUT 
+                              id=buildingCheckbox value=1723 type=checkbox 
+                              name=buildingCheckbox>Maintenance<BR><INPUT 
+                              id=buildingCheckbox value=1724 type=checkbox 
+                              name=buildingCheckbox>Truck 
+                          Shop<BR></UL></LI></UL></LI></UL></TD></TR>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI>Vons 
+                          <UL>
+                            <LI>Santa Fe Springs, CA 
+                            <UL><INPUT id=buildingCheckbox value=1801 
+                              type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1802 type=checkbox 
+                              name=buildingCheckbox>Produce<BR><INPUT 
+                              id=buildingCheckbox value=1803 type=checkbox 
+                              name=buildingCheckbox>Maint2<BR><INPUT 
+                              id=buildingCheckbox value=1804 type=checkbox 
+                              name=buildingCheckbox>Admin<BR><INPUT 
+                              id=buildingCheckbox value=1805 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR><INPUT 
+                              id=buildingCheckbox value=1806 type=checkbox 
+                              name=buildingCheckbox>Perishables<BR><INPUT 
+                              id=buildingCheckbox value=1807 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=1808 type=checkbox 
+                              name=buildingCheckbox>GM/HBC<BR></UL></LI>
+                            <LI>El Monte, CA 
+                            <UL><INPUT id=buildingCheckbox value=1809 
+                              type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=1810 type=checkbox 
+                              name=buildingCheckbox>GM/HBC<BR><INPUT 
+                              id=buildingCheckbox value=1811 type=checkbox 
+                              name=buildingCheckbox>Perish<BR><INPUT 
+                              id=buildingCheckbox value=1812 type=checkbox 
+                              name=buildingCheckbox>Meat<BR><INPUT 
+                              id=buildingCheckbox value=1813 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=2200 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=2201 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR></UL></LI>
+                            <LI>Mira Loma, CA 
+                            <UL><INPUT id=buildingCheckbox value=1814 
+                              type=checkbox 
+                            name=buildingCheckbox>Frozen<BR></UL></LI>
+                            <LI>City of Industry, CA (Storage) 
+                            <UL><INPUT id=buildingCheckbox value=1815 
+                              type=checkbox 
+                            name=buildingCheckbox>Grocery<BR></UL></LI>
+                            <LI>Las Vegas, NV 
+                            <UL><INPUT id=buildingCheckbox value=1816 
+                              type=checkbox 
+                            name=buildingCheckbox>Liquor<BR></UL></LI></UL></LI></UL></TD></TR>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI>CPS 
+                          <UL>
+                            <LI>CPS West (Sacramento) - Leased building 
+                            <UL><INPUT id=buildingCheckbox value=1901 
+                              type=checkbox 
+                            name=buildingCheckbox>Grocery<BR></UL></LI>
+                            <LI>CPS East (Kentucky) - Leased, 3rd party operated 
+
+                            <UL><INPUT id=buildingCheckbox value=1902 
+                              type=checkbox 
+                            name=buildingCheckbox>Grocery<BR></UL></LI></UL></LI></UL></TD></TR>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI>Canadian 
+                          <UL>
+                            <LI>Calgary, Alberta 
+                            <UL><INPUT id=buildingCheckbox value=2001 
+                              type=checkbox 
+                              name=buildingCheckbox>Perishable<BR><INPUT 
+                              id=buildingCheckbox value=2002 type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=2003 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR><INPUT 
+                              id=buildingCheckbox value=2004 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR><INPUT 
+                              id=buildingCheckbox value=2005 type=checkbox 
+                              name=buildingCheckbox>Offices<BR></UL></LI>
+                            <LI>Edmonton, Alberta 
+                            <UL><INPUT id=buildingCheckbox value=2006 
+                              type=checkbox 
+                              name=buildingCheckbox>Perishable<BR><INPUT 
+                              id=buildingCheckbox value=2007 type=checkbox 
+                              name=buildingCheckbox>Produce<BR><INPUT 
+                              id=buildingCheckbox value=2008 type=checkbox 
+                              name=buildingCheckbox>Frozen<BR><INPUT 
+                              id=buildingCheckbox value=2009 type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=2010 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR><INPUT 
+                              id=buildingCheckbox value=2011 type=checkbox 
+                              name=buildingCheckbox>Truck Shop<BR></UL></LI>
+                            <LI>Calgary, Alberta - Meat (Lucerne) 
+                            <UL><INPUT id=buildingCheckbox value=2012 
+                              type=checkbox 
+                            name=buildingCheckbox>Meat<BR></UL></LI>
+                            <LI>Calgary, Alberta - StoreCare, Leased 
+                            <UL><INPUT id=buildingCheckbox value=2013 
+                              type=checkbox 
+                            name=buildingCheckbox>Variety<BR></UL></LI></UL></LI></UL></TD></TR>
+                    <TR>
+                      <TD>
+                        <UL>
+                          <LI>Winnipeg 
+                          <UL>
+                            <LI>Winnipeg, Manitoba 
+                            <UL><INPUT id=buildingCheckbox value=2101 
+                              type=checkbox 
+                              name=buildingCheckbox>Perishables<BR><INPUT 
+                              id=buildingCheckbox value=2102 type=checkbox 
+                              name=buildingCheckbox>Produce<BR><INPUT 
+                              id=buildingCheckbox value=2103 type=checkbox 
+                              name=buildingCheckbox>Frozen<BR><INPUT 
+                              id=buildingCheckbox value=2104 type=checkbox 
+                              name=buildingCheckbox>Grocery<BR><INPUT 
+                              id=buildingCheckbox value=2105 type=checkbox 
+                              name=buildingCheckbox>Salvage<BR><INPUT 
+                              id=buildingCheckbox value=2106 type=checkbox 
+                              name=buildingCheckbox>Truck 
+                          Shop<BR></UL></LI></UL></LI></UL></TD></TR></TBODY></TABLE></DIV></DIV><A 
+                  style="PADDING-LEFT: 30px">Graphs Control</A> 
+                  <DIV 
+                  style="BORDER-BOTTOM: white 1px solid; BORDER-LEFT: white 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: white 1px solid; BORDER-RIGHT: white 1px solid; PADDING-TOP: 0px"><INPUT 
+                  id=displaLabelsCheckbox CHECKED type=checkbox 
+                  name=displaLabelsCheckbox> Display Axes Labels<BR><INPUT 
+                  id=displayTitleCheckbox CHECKED type=checkbox 
+                  name=displayTitleCheckbox> Display Title<BR><INPUT 
+                  id=displayLegendsCheckbox CHECKED type=checkbox 
+                  name=displayLegendsCheckbox> Display Legends <INPUT 
+                  id=displayLabels type=hidden name=displayLabels> <INPUT 
+                  id=displayTitle type=hidden name=displayTitle> <INPUT 
+                  id=displayLegends type=hidden name=displayLegends> <INPUT 
+                  id=buildingAllocationId type=hidden name=buildingAllocationId> 
+                  <INPUT id=pageName value=defaultViewer.jsp type=hidden 
+                  name=pageName> </DIV><A 
+                  style="PADDING-LEFT: 30px">Distribution (Loc)</A> 
+                  <DIV 
+                  style="BORDER-BOTTOM: white 1px solid; BORDER-LEFT: white 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: white 1px solid; BORDER-RIGHT: white 1px solid; PADDING-TOP: 0px">
+                  <TABLE border=0 cellSpacing=0 cellPadding=2 width="100%">
+                    <TBODY>
+                    <TR>
+                      <TD width="35%"><LABEL>Start Date:</LABEL> </TD>
+                      <TD width="65%"><SELECT> <OPTION 
+                          selected>08/14/2011</OPTION> 
+                          <OPTION>08/14/2011</OPTION> 
+                        <OPTION>08/14/2011</OPTION></SELECT> </TD></TR>
+                    <TR>
+                      <TD><LABEL>End Date:</LABEL> </TD>
+                      <TD><SELECT> <OPTION selected>08/14/2011</OPTION> 
+                          <OPTION>08/14/2011</OPTION> 
+                        <OPTION>08/14/2011</OPTION></SELECT> </TD></TR>
+                    <TR>
+                      <TD><LABEL>Start Period:</LABEL> </TD>
+                      <TD><SELECT name=startPeriod> <OPTION selected 
+                          value=1101>Period 09 2011</OPTION></SELECT> </TD></TR>
+                    <TR>
+                      <TD><LABEL>End Period:</LABEL> </TD>
+                      <TD><SELECT name=period> <OPTION selected 
+                          value=1101>Period 09 2011</OPTION></SELECT> </TD></TR>
+                    <TR>
+                      <TD><INPUT id=updateId value=Update type=button> 
+                    </TD></TR></TBODY></TABLE></DIV></DIV>
+                  <SCRIPT type=text/javascript>
+
+	    
+	    $(document).ready(function() {
+	    	
+	    	
+	    	
+	    	var allParentTags = new Array();
+	    	
+	    	var allTags = $('UL.level3').parents('LI');
+	    	var i;
+	    	for (i=0;i<allTags.length;i++){
+	    		var tagId = $(allTags[i]).attr('id');
+	    		allParentTags[i]=tagId;
+	    	}
+	    	allParentTags[i]=$('UL.level3').attr('id');
+	    	
+	    	
+	    	alert("length = "+allParentTags.length);
+	    	for (var j=0;j<allParentTags.length;j++){
+	    		var value = allParentTags[j];
+	    		alert("value = "+ value);
+	    	}
+	    	
+	    	
+	    	 
+	    	
+	    	
+	    
+
+         $("#updateId").click(function(){
+        	 
+        	 if(document.getElementById("displayTitleCheckbox").checked)
+     		{
+     		    document.getElementById("displayTitle").value=true;
+     		}else{
+     			document.getElementById("displayTitle").value=false;
+     		}
+     	    if(document.getElementById("displaLabelsCheckbox").checked)
+     		{
+     		document.getElementById("displayLabels").value=true;
+     		}else{
+     			document.getElementById("displayLabels").value=false;
+     		}
+     	    
+     	    if(document.getElementById("displayLegendsCheckbox").checked)
+     		{
+     		document.getElementById("displayLegends").value=true;
+     		}else{
+     			document.getElementById("displayLegends").value=false;
+     		}  
+     	    var foo=valuate();
+     	    
+     	    if(foo)
+     	    	document.getElementById("pageName").value="Viewer.jsp"  	
+     	    else
+     	    	document.getElementById("pageName").value="defaultViewer.jsp";
+     	    
+        	 
+        	$("#right").load("/Helios/pages/dashboard.jsp?"+
+        			$.param(
+        					{
+        						pageName:document.getElementById("pageName").value,
+        						displayTitle:document.getElementById("displayTitle").value,
+        						displayLabels:document.getElementById("displayLabels").value,
+        						displayLegends:document.getElementById("displayLegends").value
+        						
+        					}
+        	
+        	) );  
+
+         });
+      });    
+
+	    
+	
+
+
+function valuate(){
+	var txt='';
+	var buildingCheckboxes=document.getElementsByName('buildingCheckbox')
+	var foo=false;
+	for (var i_tem = 0; i_tem < buildingCheckboxes.length; i_tem++)
+	if (buildingCheckboxes[i_tem].checked){
+		foo=true;
+	txt+=','+buildingCheckboxes[i_tem].value;
+	}
+	txt=txt.replace(/^,/,'');
+	document.getElementById('buildingAllocationId').value=txt;
+	return foo;
+	}
+	
+	
+	
+</SCRIPT>
+                  </FORM></DIV>
+                  <DIV id=right>
+                  <SCRIPT type=text/javascript>$("#right").load('./pages/dashboard.jsp?MI=PLANT_UNIT');</SCRIPT>
+                  </DIV></DIV></TD></TR></TBODY></TABLE></TD></TR><!-- ***************************** FOOTER STARTS HERE ******************************************** -->
+        <TR>
+          <TD class=footer>Copyright © 2012. All Rights Reserved. </TD></TR><!-- ***************************** FOOTER ENDS HERE ******************************************** --></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>function Go(){return}</SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Predict%20Energy_files/RelativePositioned_var.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Predict%20Energy_files/menu132_compact.js"></SCRIPT>
+</BODY></HTML>

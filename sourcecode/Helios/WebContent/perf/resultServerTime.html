@@ -1,0 +1,33 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Server time test</title>
+<script type="text/javascript" src="../js/chartAjaxAPI.js"></script>
+<script type="text/javascript">
+function generateChart()
+{
+	var cm = new ChartModel (600,400);
+	cm.setType('line');
+	cm.setFormat('png');
+	cm.setDimension('2d');
+	cm.setStacked(false);
+	cm.setColorByCategory(false);
+	cm.setShowLabel(false);
+	cm.setShowLegend(true);
+	cm.setTitle('Server time test');
+	cm.setCategories('10 data, 100 data');
+	cm.setValues('2107, 5306, 2011, 5374, 7236, 20128, 6255, 19898');
+	cm.setSeriesNames('URL approach 30 threads,API approach 30 threads,URL approach 100 threads,API approach 100 threads');
+	var chartScript = "function beforeDrawMarker(marker, dph, icsc){if(dph==null) return; importPackage (Packages.org.eclipse.birt.chart.model.attribute); "
+		+	"if(dph.getSeriesValue()=='URL approach 30 threads') marker.setType(MarkerType.CROSSHAIR_LITERAL); "
+		+	"else if(dph.getSeriesValue()=='API approach 30 threads') marker.setType(MarkerType.DIAMOND_LITERAL); "
+		+	"else if(dph.getSeriesValue()=='URL approach 100 threads') marker.setType(MarkerType.NABLA_LITERAL); }";
+	cm.setScript(chartScript);
+	var chart = new BirtChart();
+	chart.setDataXML(cm);
+	chart.render("chartDiv");
+}
+</script>
+</head>
+<body onload="generateChart()">
+<div id="chartDiv"></div>
+</body></html>

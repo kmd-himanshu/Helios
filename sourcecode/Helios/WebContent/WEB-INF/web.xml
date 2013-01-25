@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>BIRT_Chart_JS_API_Samples</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<context-param>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>server</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/WEB-INF/faces-config.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+    </listener>
+	
+	<!-- Servlet Context Listener -->
+	<listener>
+		<listener-class>
+			org.bcje.listeners.ChartServletContextListener
+		</listener-class>
+	</listener>
+
+	<!-- Http Session Listener -->
+	 <listener>
+		<listener-class>
+			org.bcje.listeners.ChartHttpSessionListener
+		</listener-class>
+	</listener>
+	
+	<servlet>
+		<servlet-name>ChartServlet</servlet-name>
+		<servlet-class>org.bcje.servlets.ChartServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ChartServletNew</servlet-name>
+		<servlet-class>org.bcje.servlets.ChartServletNew</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>GoogleMap</servlet-name>
+		<servlet-class>org.bcje.servlets.GoogleMapServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ChartServletNewGoogle</servlet-name>
+		<servlet-class>org.bcje.servlets.GoogleOfChartServletNew</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>GraphGen</servlet-name>
+		<servlet-class>org.bcje.servlets.GraphGen</servlet-class>
+	</servlet>
+	 <!-- Faces Servlet -->
+	
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup> 1 </load-on-startup>
+    </servlet>
+    
+    
+	<servlet>
+    <servlet-name>ChartViewer</servlet-name>
+    <servlet-class>org.bcje.servlets.ChartViewer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChartViewer</servlet-name>
+    <url-pattern>/chartViewer</url-pattern>
+  </servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ChartServlet</servlet-name>
+		<url-pattern>/chart</url-pattern>
+	</servlet-mapping>	
+	<servlet-mapping>
+		<servlet-name>ChartServletNew</servlet-name>
+		<url-pattern>/chartNew</url-pattern>
+	</servlet-mapping>	
+	<servlet-mapping>
+		<servlet-name>ChartServletNewGoogle</servlet-name>
+		<url-pattern>/chartNewGoogle</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet-mapping>
+		<servlet-name>GoogleMap</servlet-name>
+		<url-pattern>/googleMap</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet-mapping>
+		<servlet-name>GraphGen</servlet-name>
+		<url-pattern>/graphGen</url-pattern>
+	</servlet-mapping>	
+	
+	
+	<!-- Faces Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.jsf</url-pattern>
+    </servlet-mapping>   
+    
+    <resource-ref>
+      <description>DB Connection</description>
+      <res-ref-name>jdbc/boomerdb</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+	
+</web-app>

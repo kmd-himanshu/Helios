@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<persistence-unit name="boomerdb" transaction-type="RESOURCE_LOCAL">
+		<description>Database connection to Boomer database as backend to the Boomer application.</description>
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>com.helio.boomer.rap.engine.model.AllocationType</class>
+		<class>com.helio.boomer.rap.engine.model.BoomerType</class>
+		<class>com.helio.boomer.rap.engine.model.Building</class>
+		<class>com.helio.boomer.rap.engine.model.BuildingAllocation</class>
+		<class>com.helio.boomer.rap.engine.model.DeviceModel</class>
+		<class>com.helio.boomer.rap.engine.model.DeviceMonitor</class>
+		<class>com.helio.boomer.rap.engine.model.Division</class>
+		<class>com.helio.boomer.rap.engine.model.Geolocation</class>
+		<class>com.helio.boomer.rap.engine.model.Location</class>
+		<class>com.helio.boomer.rap.engine.model.Manufacturer</class>
+		<class>com.helio.boomer.rap.engine.model.Period</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boomerdb"/>
+			<property name="javax.persistence.jdbc.user" value="boomer"/>
+			<property name="javax.persistence.jdbc.password" value="ssn!593"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+		</properties>
+	</persistence-unit>
+</persistence>

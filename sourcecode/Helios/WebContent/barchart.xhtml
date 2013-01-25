@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>BarChart Title</title>
+</h:head>
+<h:body>
+        Basic Bar Chart
+        <br />
+
+	<p:barChart id="basic" value="#{chartBean.categoryModel}"
+		legendPosition="ne" title="Basic Bar Chart" min="0" max="200"
+		style="height:300px" />
+
+	<p:barChart id="horizontal" value="#{chartBean.categoryModel}"
+		legendPosition="se" style="height:300px" title="Horizontal Bar Chart"
+		orientation="horizontal" min="0" max="200" />
+
+	<p:barChart id="stacked" value="#{chartBean.categoryModel}"
+		legendPosition="ne" style="height:300px" title="Stacked Bar Chart"
+		stacked="true" barMargin="50" min="0" max="300" />
+
+	<p:pieChart id="sample" value="#{chartBean.pieModel}"
+		legendPosition="w" title="Sample Pie Chart"
+		style="width:400px;height:300px" />
+
+	<p:pieChart id="custom1" value="#{chartBean.pieModel}"
+		legendPosition="ec" fill="false" showDataLabels="true"
+		title="Custom Options" style="width:400px;height:300px"
+		sliceMargin="5" diameter="150" />
+		
+
+
+</h:body>
+</html>
+
